@@ -28,6 +28,7 @@
 		EB330DA726486D1D005A8FF8 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DA626486D1D005A8FF8 /* ProfileHeader.swift */; };
 		EB330DA926486D29005A8FF8 /* ProfileFilterButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DA826486D29005A8FF8 /* ProfileFilterButtons.swift */; };
 		EB330DAB26486D42005A8FF8 /* ProfileFollowButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DAA26486D42005A8FF8 /* ProfileFollowButtons.swift */; };
+		EB330DAD26488992005A8FF8 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DAC26488992005A8FF8 /* NewPostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		EB330DA626486D1D005A8FF8 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		EB330DA826486D29005A8FF8 /* ProfileFilterButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterButtons.swift; sourceTree = "<group>"; };
 		EB330DAA26486D42005A8FF8 /* ProfileFollowButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowButtons.swift; sourceTree = "<group>"; };
+		EB330DAC26488992005A8FF8 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				EB330D882647897A005A8FF8 /* PostCell.swift */,
 				EB330D8626478633005A8FF8 /* FeedView.swift */,
+				EB330DAC26488992005A8FF8 /* NewPostView.swift */,
 			);
 			path = HomeFeed;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				EB330DA926486D29005A8FF8 /* ProfileFilterButtons.swift in Sources */,
 				EB330D9E2647BF49005A8FF8 /* MessageView.swift in Sources */,
 				EB330D942647AAB1005A8FF8 /* ConversationCell.swift in Sources */,
+				EB330DAD26488992005A8FF8 /* NewPostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

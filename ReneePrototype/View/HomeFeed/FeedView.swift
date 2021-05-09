@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FeedView: View {
+    @State var isShowingNewPostView: Bool = false
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             ScrollView{
@@ -18,7 +19,7 @@ struct FeedView: View {
                 }.padding()
             }
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {isShowingNewPostView.toggle()}, label: {
                 Image(systemName: "plus")
                     .resizable()
                     .frame(width: 32, height: 32)
@@ -28,6 +29,9 @@ struct FeedView: View {
             .foregroundColor(Color(.white))
             .clipShape(Circle())
             .padding()
+            .fullScreenCover(isPresented: $isShowingNewPostView) {
+                NewPostView(isShowingNewPostView: $isShowingNewPostView)
+            }
             
         }
     }
