@@ -19,12 +19,14 @@ struct ConversationCell: View {
             
             VStack(alignment: .leading, spacing: 4){
                 Text("Some User")
-                    .font(.system(size: 14, weight: .semibold))
-                Text("This is what a very long text will look liek e sf sdf s")
-                    .font(.system(size: 14))
+                    .font(.system(size: 16, weight: .semibold))
+                Text("This is what a very long text will look liek e sf sdf ssadnsandasnd ka da ska dkas dkas dsak dakas kda skd askd aks dkas dkas dkas k")
+                    .lineLimit(2)
+                    .font(.system(size: 12))
                 Divider()
             }
             .padding(.trailing)
+            .foregroundColor(.black)
         }
     }
 }
