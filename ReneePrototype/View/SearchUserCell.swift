@@ -23,6 +23,8 @@ struct SearchUserCell: View {
                 Text("username")
                     .font(.system(size: 14))
             }
+            .foregroundColor(.black)
+            Spacer()
         }
     }
 }

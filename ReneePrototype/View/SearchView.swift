@@ -19,7 +19,11 @@ struct SearchView: View {
             VStack (alignment: .leading) {
                 ForEach(0..<10) { _ in
                     HStack { Spacer()}
-                    SearchUserCell()
+                    NavigationLink(
+                        destination: UserProfileView(),
+                        label: {
+                            SearchUserCell()
+                        })
                 }
             }
             .padding(.leading)

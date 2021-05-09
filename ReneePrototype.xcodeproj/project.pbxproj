@@ -22,6 +22,9 @@
 		EB330D982647B469005A8FF8 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D972647B469005A8FF8 /* ChatView.swift */; };
 		EB330D9A2647B779005A8FF8 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D992647B779005A8FF8 /* ChatBubble.swift */; };
 		EB330D9C2647BAF4005A8FF8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D9B2647BAF4005A8FF8 /* Message.swift */; };
+		EB330D9E2647BF49005A8FF8 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D9D2647BF49005A8FF8 /* MessageView.swift */; };
+		EB330DA026486631005A8FF8 /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D9F26486631005A8FF8 /* NewMessageView.swift */; };
+		EB330DA226486B1B005A8FF8 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DA126486B1B005A8FF8 /* UserProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		EB330D972647B469005A8FF8 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		EB330D992647B779005A8FF8 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		EB330D9B2647BAF4005A8FF8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		EB330D9D2647BF49005A8FF8 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		EB330D9F26486631005A8FF8 /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
+		EB330DA126486B1B005A8FF8 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 		EB330D8426478589005A8FF8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EB330DA326486B27005A8FF8 /* Profile */,
 				EB330D902647AA84005A8FF8 /* Chat */,
 				EB330D7626477C8F005A8FF8 /* ContentView.swift */,
 				EB330D8626478633005A8FF8 /* FeedView.swift */,
@@ -130,8 +137,18 @@
 				EB330D952647B2AD005A8FF8 /* MessageInputView.swift */,
 				EB330D972647B469005A8FF8 /* ChatView.swift */,
 				EB330D992647B779005A8FF8 /* ChatBubble.swift */,
+				EB330D9D2647BF49005A8FF8 /* MessageView.swift */,
+				EB330D9F26486631005A8FF8 /* NewMessageView.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		EB330DA326486B27005A8FF8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EB330DA126486B1B005A8FF8 /* UserProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,9 +229,12 @@
 				EB330D7526477C8F005A8FF8 /* ReneePrototypeApp.swift in Sources */,
 				EB330D9A2647B779005A8FF8 /* ChatBubble.swift in Sources */,
 				EB330D892647897A005A8FF8 /* PostCell.swift in Sources */,
+				EB330DA026486631005A8FF8 /* NewMessageView.swift in Sources */,
 				EB330D9C2647BAF4005A8FF8 /* Message.swift in Sources */,
+				EB330DA226486B1B005A8FF8 /* UserProfileView.swift in Sources */,
 				EB330D8D26479C74005A8FF8 /* SearchBar.swift in Sources */,
 				EB330D922647AA9B005A8FF8 /* ConversationView.swift in Sources */,
+				EB330D9E2647BF49005A8FF8 /* MessageView.swift in Sources */,
 				EB330D942647AAB1005A8FF8 /* ConversationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
