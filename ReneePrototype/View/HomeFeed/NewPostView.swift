@@ -9,10 +9,11 @@ import SwiftUI
 
 struct NewPostView: View {
     @Binding var isShowingNewPostView: Bool
+    @State var captionText: String = ""
     var body: some View {
         NavigationView{
             VStack {
-                HStack{
+                HStack(alignment: .top){
                     Image("vtlogo")
                         .resizable()
                         .scaledToFit()
@@ -20,8 +21,7 @@ struct NewPostView: View {
                         .frame(width: 64, height: 64)
                         .cornerRadius(32)
                     
-                    Text("Some text")
-                        .foregroundColor(.gray)
+                    TextArea("Whats popppoingg", text: $captionText)
                     
                     Spacer()
                 }.padding()
@@ -46,6 +46,6 @@ struct NewPostView: View {
 
 struct NewPostView_Previews: PreviewProvider {
     static var previews: some View {
-        NewPostView(isShowingNewPostView: .constant(false))
+        NewPostView(isShowingNewPostView: .constant(false), captionText: "")
     }
 }

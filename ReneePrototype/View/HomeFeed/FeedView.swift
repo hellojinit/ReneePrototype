@@ -30,7 +30,7 @@ struct FeedView: View {
             .clipShape(Circle())
             .padding()
             .fullScreenCover(isPresented: $isShowingNewPostView) {
-                NewPostView(isShowingNewPostView: $isShowingNewPostView)
+                NewPostView(isShowingNewPostView: $isShowingNewPostView, captionText: "")
             }
             
         }
