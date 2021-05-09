@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct UserProfileView: View {
+    @State var selectedOption: ProfileFilterOptions = .posts
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView{
+            VStack{
+                ProfileHeader()
+                    .padding()
+                ProfileFilterButtons(selectedFilter: $selectedOption)
+            }
+        }
     }
 }
 

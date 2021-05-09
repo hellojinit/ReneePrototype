@@ -25,6 +25,9 @@
 		EB330D9E2647BF49005A8FF8 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D9D2647BF49005A8FF8 /* MessageView.swift */; };
 		EB330DA026486631005A8FF8 /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D9F26486631005A8FF8 /* NewMessageView.swift */; };
 		EB330DA226486B1B005A8FF8 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DA126486B1B005A8FF8 /* UserProfileView.swift */; };
+		EB330DA726486D1D005A8FF8 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DA626486D1D005A8FF8 /* ProfileHeader.swift */; };
+		EB330DA926486D29005A8FF8 /* ProfileFilterButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DA826486D29005A8FF8 /* ProfileFilterButtons.swift */; };
+		EB330DAB26486D42005A8FF8 /* ProfileFollowButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DAA26486D42005A8FF8 /* ProfileFollowButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		EB330D9D2647BF49005A8FF8 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		EB330D9F26486631005A8FF8 /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
 		EB330DA126486B1B005A8FF8 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		EB330DA626486D1D005A8FF8 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		EB330DA826486D29005A8FF8 /* ProfileFilterButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterButtons.swift; sourceTree = "<group>"; };
+		EB330DAA26486D42005A8FF8 /* ProfileFollowButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,14 +116,11 @@
 		EB330D8426478589005A8FF8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EB330DA526486C96005A8FF8 /* Search */,
+				EB330DA426486C7D005A8FF8 /* HomeFeed */,
 				EB330DA326486B27005A8FF8 /* Profile */,
 				EB330D902647AA84005A8FF8 /* Chat */,
 				EB330D7626477C8F005A8FF8 /* ContentView.swift */,
-				EB330D8626478633005A8FF8 /* FeedView.swift */,
-				EB330D882647897A005A8FF8 /* PostCell.swift */,
-				EB330D8A26479BB1005A8FF8 /* SearchView.swift */,
-				EB330D8C26479C74005A8FF8 /* SearchBar.swift */,
-				EB330D8E2647A770005A8FF8 /* SearchUserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,8 +150,30 @@
 			isa = PBXGroup;
 			children = (
 				EB330DA126486B1B005A8FF8 /* UserProfileView.swift */,
+				EB330DA626486D1D005A8FF8 /* ProfileHeader.swift */,
+				EB330DAA26486D42005A8FF8 /* ProfileFollowButtons.swift */,
+				EB330DA826486D29005A8FF8 /* ProfileFilterButtons.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		EB330DA426486C7D005A8FF8 /* HomeFeed */ = {
+			isa = PBXGroup;
+			children = (
+				EB330D882647897A005A8FF8 /* PostCell.swift */,
+				EB330D8626478633005A8FF8 /* FeedView.swift */,
+			);
+			path = HomeFeed;
+			sourceTree = "<group>";
+		};
+		EB330DA526486C96005A8FF8 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				EB330D8A26479BB1005A8FF8 /* SearchView.swift */,
+				EB330D8E2647A770005A8FF8 /* SearchUserCell.swift */,
+				EB330D8C26479C74005A8FF8 /* SearchBar.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB330DAB26486D42005A8FF8 /* ProfileFollowButtons.swift in Sources */,
 				EB330D8F2647A770005A8FF8 /* SearchUserCell.swift in Sources */,
 				EB330D962647B2AD005A8FF8 /* MessageInputView.swift in Sources */,
 				EB330D8B26479BB1005A8FF8 /* SearchView.swift in Sources */,
@@ -230,10 +256,12 @@
 				EB330D9A2647B779005A8FF8 /* ChatBubble.swift in Sources */,
 				EB330D892647897A005A8FF8 /* PostCell.swift in Sources */,
 				EB330DA026486631005A8FF8 /* NewMessageView.swift in Sources */,
+				EB330DA726486D1D005A8FF8 /* ProfileHeader.swift in Sources */,
 				EB330D9C2647BAF4005A8FF8 /* Message.swift in Sources */,
 				EB330DA226486B1B005A8FF8 /* UserProfileView.swift in Sources */,
 				EB330D8D26479C74005A8FF8 /* SearchBar.swift in Sources */,
 				EB330D922647AA9B005A8FF8 /* ConversationView.swift in Sources */,
+				EB330DA926486D29005A8FF8 /* ProfileFilterButtons.swift in Sources */,
 				EB330D9E2647BF49005A8FF8 /* MessageView.swift in Sources */,
 				EB330D942647AAB1005A8FF8 /* ConversationCell.swift in Sources */,
 			);
