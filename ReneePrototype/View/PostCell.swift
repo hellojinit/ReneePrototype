@@ -23,7 +23,16 @@ struct PostCell: View {
                     .font(.system(size: 20))
                     .padding(.top, 7)
                 Spacer()
-            }
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Image(systemName: "chevron.down")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25, height: 25)
+                        .padding(.top, 10)
+                        .padding(.trailing)
+                        .foregroundColor(.gray)
+                })
+            }.foregroundColor(.black)
             
             Image("vtlogo")
                 .resizable()
@@ -87,6 +96,7 @@ struct PostCell: View {
                     .padding(.bottom, 20)
             }
         }
+        .padding(.zero)
     }
 }
 
