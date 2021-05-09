@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             TabView{
-                Text("Chat")
+                ConversationView()
                     .tabItem {
                         Image(systemName: "message")
                         Text("Chat")
