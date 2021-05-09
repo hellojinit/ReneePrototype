@@ -20,6 +20,8 @@
 		EB330D942647AAB1005A8FF8 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D932647AAB1005A8FF8 /* ConversationCell.swift */; };
 		EB330D962647B2AD005A8FF8 /* MessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D952647B2AD005A8FF8 /* MessageInputView.swift */; };
 		EB330D982647B469005A8FF8 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D972647B469005A8FF8 /* ChatView.swift */; };
+		EB330D9A2647B779005A8FF8 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D992647B779005A8FF8 /* ChatBubble.swift */; };
+		EB330D9C2647BAF4005A8FF8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D9B2647BAF4005A8FF8 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		EB330D932647AAB1005A8FF8 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		EB330D952647B2AD005A8FF8 /* MessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputView.swift; sourceTree = "<group>"; };
 		EB330D972647B469005A8FF8 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		EB330D992647B779005A8FF8 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		EB330D9B2647BAF4005A8FF8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 		EB330D8326478585005A8FF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB330D9B2647BAF4005A8FF8 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 				EB330D932647AAB1005A8FF8 /* ConversationCell.swift */,
 				EB330D952647B2AD005A8FF8 /* MessageInputView.swift */,
 				EB330D972647B469005A8FF8 /* ChatView.swift */,
+				EB330D992647B779005A8FF8 /* ChatBubble.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -204,7 +210,9 @@
 				EB330D982647B469005A8FF8 /* ChatView.swift in Sources */,
 				EB330D8726478633005A8FF8 /* FeedView.swift in Sources */,
 				EB330D7526477C8F005A8FF8 /* ReneePrototypeApp.swift in Sources */,
+				EB330D9A2647B779005A8FF8 /* ChatBubble.swift in Sources */,
 				EB330D892647897A005A8FF8 /* PostCell.swift in Sources */,
+				EB330D9C2647BAF4005A8FF8 /* Message.swift in Sources */,
 				EB330D8D26479C74005A8FF8 /* SearchBar.swift in Sources */,
 				EB330D922647AA9B005A8FF8 /* ConversationView.swift in Sources */,
 				EB330D942647AAB1005A8FF8 /* ConversationCell.swift in Sources */,
