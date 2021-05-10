@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB202C102649E6BF00858840 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB202C0F2649E6BF00858840 /* SearchViewModel.swift */; };
 		EB330D7526477C8F005A8FF8 /* ReneePrototypeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D7426477C8F005A8FF8 /* ReneePrototypeApp.swift */; };
 		EB330D7726477C8F005A8FF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D7626477C8F005A8FF8 /* ContentView.swift */; };
 		EB330D7926477C91005A8FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB330D7826477C91005A8FF8 /* Assets.xcassets */; };
@@ -43,11 +44,11 @@
 		EBB5C6902648FDD40079A871 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EBB5C68F2648FDD40079A871 /* FirebaseFirestore */; };
 		EBC2FF86264907E0005D73CF /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2FF85264907E0005D73CF /* AuthViewModel.swift */; };
 		EBC2FF882649CA08005D73CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2FF872649CA08005D73CF /* User.swift */; };
-		EBC2FF8A2649CE9A005D73CF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2FF892649CE9A005D73CF /* SearchViewModel.swift */; };
 		EBC2FF8C2649CF4D005D73CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2FF8B2649CF4D005D73CF /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB202C0F2649E6BF00858840 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		EB330D7126477C8F005A8FF8 /* ReneePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReneePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB330D7426477C8F005A8FF8 /* ReneePrototypeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReneePrototypeApp.swift; sourceTree = "<group>"; };
 		EB330D7626477C8F005A8FF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -82,7 +83,6 @@
 		EBB5C6862648FCD90079A871 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EBC2FF85264907E0005D73CF /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		EBC2FF872649CA08005D73CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		EBC2FF892649CE9A005D73CF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		EBC2FF8B2649CF4D005D73CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				EBC2FF85264907E0005D73CF /* AuthViewModel.swift */,
-				EBC2FF892649CE9A005D73CF /* SearchViewModel.swift */,
+				EB202C0F2649E6BF00858840 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -340,7 +340,6 @@
 				EB330D8F2647A770005A8FF8 /* SearchUserCell.swift in Sources */,
 				EB330D962647B2AD005A8FF8 /* MessageInputView.swift in Sources */,
 				EB330D8B26479BB1005A8FF8 /* SearchView.swift in Sources */,
-				EBC2FF8A2649CE9A005D73CF /* SearchViewModel.swift in Sources */,
 				EB330D7726477C8F005A8FF8 /* ContentView.swift in Sources */,
 				EB330D982647B469005A8FF8 /* ChatView.swift in Sources */,
 				EBC2FF8C2649CF4D005D73CF /* Constants.swift in Sources */,
@@ -359,6 +358,7 @@
 				EB330DB8264899C4005A8FF8 /* LogInTextField.swift in Sources */,
 				EB330D8D26479C74005A8FF8 /* SearchBar.swift in Sources */,
 				EB330D922647AA9B005A8FF8 /* ConversationView.swift in Sources */,
+				EB202C102649E6BF00858840 /* SearchViewModel.swift in Sources */,
 				EB330DA926486D29005A8FF8 /* ProfileFilterButtons.swift in Sources */,
 				EB330DBA26489F97005A8FF8 /* SecureTextField.swift in Sources */,
 				EBC2FF86264907E0005D73CF /* AuthViewModel.swift in Sources */,
