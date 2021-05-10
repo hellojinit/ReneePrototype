@@ -14,7 +14,6 @@ struct DataView: View {
     let profitShare = 4.20
     
     var body: some View {
-        VStack (spacing: 0){
             Form{
                 Section(header: Text("Your Revenue Settings")){
                     Toggle("Use my data to show me ads", isOn: $useMyDataOption)
@@ -23,7 +22,7 @@ struct DataView: View {
                             .foregroundColor(.gray)
                     }
                     Toggle("Use AI algorithm to filter my feed", isOn: $useAlgorithmOption)
-                    if !useMyDataOption {
+                    if !useAlgorithmOption {
                         Text("Your feed will be organized chronologically!")
                             .foregroundColor(.gray)
                     }
@@ -39,14 +38,23 @@ struct DataView: View {
                         Text("Bitcoin").tag(4)
                     }.foregroundColor(.black)
                     if revenueSelection == 1 {
-                        Text("Thank you for making world a better place!!")
+                        Text("Thank You so much for making world a better place!!")
                             .foregroundColor(.gray)
-                    }else{
-                        
+                    } else if revenueSelection == 2{
+                        Text("Investing information is unavailable in beta version.")
+                            .foregroundColor(.gray)
+                    } else if revenueSelection == 3{
+                        Text("Information and links to bank transfer is unavailable in beta version.")
+                            .foregroundColor(.gray)
+                    } else{
+                        Text("Information and links to Bitcoin transfer is unavailable in beta version.")
+                            .foregroundColor(.gray)
                     }
                 }
+                Section(header: Text("Your Data")){
+                    Link("Terms of Service", destination: URL(string: "www.renee.app")!)
+                }
             }
-        }
     }
 }
 
