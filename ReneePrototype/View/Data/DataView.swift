@@ -11,14 +11,20 @@ struct DataView: View {
     @State private var revenueSelection = 1
     @State private var useMyDataOption: Bool = true
     @State private var useAlgorithmOption: Bool = true
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     let profitShare = 4.20
     
     var body: some View {
             Form{
-                Section(header: Text("Your Revenue Settings")){
+                Section(header: Text("Settings")){
                     Toggle("Use my data to show me ads", isOn: $useMyDataOption)
                     if useMyDataOption {
                         Text("You can find all your collected data in the \"Your Data\" section.")
+                            .foregroundColor(.gray)
+                    }
+                    else{
+                        Text("Your data recording has been paused. We will filter your profit share accordingly.")
                             .foregroundColor(.gray)
                     }
                     Toggle("Use AI algorithm to filter my feed", isOn: $useAlgorithmOption)
@@ -36,7 +42,7 @@ struct DataView: View {
                         Text("Invest").tag(2)
                         Text("Bank Transfer").tag(3)
                         Text("Bitcoin").tag(4)
-                    }.foregroundColor(.black)
+                    }
                     if revenueSelection == 1 {
                         Text("Thank You so much for making world a better place!!")
                             .foregroundColor(.gray)
@@ -52,8 +58,27 @@ struct DataView: View {
                     }
                 }
                 Section(header: Text("Your Data")){
+                    HStack{
+                        Text("View all your data")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                    }
+                    
                     Link("Terms of Service", destination: URL(string: "www.renee.app")!)
                 }
+                
+                Section{
+                    Link("Contact us", destination: URL(string: "www.youtube.com")!)
+                        .foregroundColor(.blue)
+                    Link("Delete all my data", destination: URL(string: "www.youtube.com")!)
+                    Text("Log out")
+                        .onTapGesture(perform: {
+                            viewModel.signOut()
+                        })
+                    Link("Deactivate my account", destination: URL(string: "www.youtube.com")!)
+                }.foregroundColor(.red)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+
             }
     }
 }

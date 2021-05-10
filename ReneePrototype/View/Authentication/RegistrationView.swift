@@ -13,7 +13,9 @@ struct RegistrationView: View {
     @State var fullname: String = ""
     @State var username: String = ""
     @State var dob: String = ""
+    let betaVersionAccess = 1
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         ZStack {
@@ -61,9 +63,11 @@ struct RegistrationView: View {
                         .cornerRadius(15)
                         .padding(.horizontal)
                         .padding(.bottom)
-                }
+                }.foregroundColor(.white)
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    viewModel.register(email: email, password: password, username: username, fullname: fullname, betaVersionAccess: betaVersionAccess)
+                }, label: {
                     Text("Sign Up")
                         .font(.headline)
                         .foregroundColor(Color.green)

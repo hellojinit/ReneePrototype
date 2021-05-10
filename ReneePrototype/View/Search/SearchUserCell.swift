@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct SearchUserCell: View {
+    let user: User
+    
     var body: some View {
         HStack (spacing: 12){
-            Image("vtlogo")
+            Image("meAndKhushi")
                 .resizable()
                 .scaledToFit()
                 .clipped()
@@ -18,19 +20,13 @@ struct SearchUserCell: View {
                 .clipShape(Circle())
             
             VStack(alignment: .leading, spacing: 4){
-                Text("Some User")
+                Text(user.fullname)
                     .font(.system(size: 14, weight: .semibold))
-                Text("username")
+                Text(user.username)
                     .font(.system(size: 14))
             }
             .foregroundColor(.black)
             Spacer()
         }
-    }
-}
-
-struct SearchUserCell_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchUserCell()
     }
 }

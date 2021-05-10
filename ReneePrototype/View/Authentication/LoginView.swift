@@ -10,6 +10,8 @@ import SwiftUI
 struct LoginView: View {
     @State var email: String = ""
     @State var password: String = ""
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -33,6 +35,7 @@ struct LoginView: View {
                             .cornerRadius(15)
                             .padding(.horizontal)
                             .padding(.bottom)
+                            .foregroundColor(.white)
 
                         SecureTextField(text: $password, placeHolder: Text("Password"))
                             .padding()
@@ -40,6 +43,7 @@ struct LoginView: View {
                             .cornerRadius(15)
                             .padding(.horizontal)
                             .padding(.bottom)
+                            .foregroundColor(.white)
                     }
                     
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
@@ -50,7 +54,9 @@ struct LoginView: View {
                             .padding(.bottom)
                     })
                     
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        viewModel.login(withEmail: email, password: password)
+                    }, label: {
                         Text("Sign In")
                             .font(.headline)
                             .foregroundColor(Color.green)

@@ -8,40 +8,51 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
-        NavigationView{
-            TabView{
-                ConversationView()
-                    .tabItem {
-                        Image(systemName: "message")
-                        Text("Chat")
-                    }
-                FeedView()
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
-                SearchView()
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("Search")
-                    }
+        Group{
+            if viewModel.userSession != nil {
+                NavigationView{
+                    TabView{
+                        ConversationView()
+                            .tabItem {
+                                Image(systemName: "message")
+                                Text("Chat")
+                            }
+                        FeedView()
+                            .tabItem {
+                                Image(systemName: "house")
+                                Text("Home")
+                            }
+                        SearchView()
+                            .tabItem {
+                                Image(systemName: "magnifyingglass")
+                                Text("Search")
+                            }
 
-                UserProfileView()
-                    .tabItem {
-                        Image(systemName: "person")
-                        Text("Profile")
-                    }
+                        UserProfileView()
+                            .tabItem {
+                                Image(systemName: "person")
+                                Text("Profile")
+                            }
 
-                DataView()
-                    .tabItem {
-                        Image(systemName: "doc.text")
-                        Text("Data")
+                        DataView()
+                            .tabItem {
+                                Image(systemName: "doc.text")
+                                Text("Data")
+                            }
                     }
+                    .navigationBarTitle("Renee")
+                    .navigationBarTitleDisplayMode(.inline)
+                }
             }
-            .navigationBarTitle("Renee")
-            .navigationBarTitleDisplayMode(.inline)
+            else {
+                LoginView()
+            }
         }
+        
+        
     }
 }
 

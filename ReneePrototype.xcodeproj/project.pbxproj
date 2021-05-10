@@ -41,6 +41,10 @@
 		EBB5C68C2648FDD40079A871 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EBB5C68B2648FDD40079A871 /* FirebaseStorage */; };
 		EBB5C68E2648FDD40079A871 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EBB5C68D2648FDD40079A871 /* FirebaseAuth */; };
 		EBB5C6902648FDD40079A871 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EBB5C68F2648FDD40079A871 /* FirebaseFirestore */; };
+		EBC2FF86264907E0005D73CF /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2FF85264907E0005D73CF /* AuthViewModel.swift */; };
+		EBC2FF882649CA08005D73CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2FF872649CA08005D73CF /* User.swift */; };
+		EBC2FF8A2649CE9A005D73CF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2FF892649CE9A005D73CF /* SearchViewModel.swift */; };
+		EBC2FF8C2649CF4D005D73CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2FF8B2649CF4D005D73CF /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,10 @@
 		EB330DBB2648C38A005A8FF8 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		EB330DBE2648E442005A8FF8 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		EBB5C6862648FCD90079A871 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EBC2FF85264907E0005D73CF /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		EBC2FF872649CA08005D73CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EBC2FF892649CE9A005D73CF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		EBC2FF8B2649CF4D005D73CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				EB330D9B2647BAF4005A8FF8 /* Message.swift */,
+				EBC2FF872649CA08005D73CF /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +167,8 @@
 		EB330D852647858E005A8FF8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EBC2FF85264907E0005D73CF /* AuthViewModel.swift */,
+				EBC2FF892649CE9A005D73CF /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				EB330DAF26488E4D005A8FF8 /* HelperViews */,
+				EBC2FF8B2649CF4D005D73CF /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -328,8 +340,11 @@
 				EB330D8F2647A770005A8FF8 /* SearchUserCell.swift in Sources */,
 				EB330D962647B2AD005A8FF8 /* MessageInputView.swift in Sources */,
 				EB330D8B26479BB1005A8FF8 /* SearchView.swift in Sources */,
+				EBC2FF8A2649CE9A005D73CF /* SearchViewModel.swift in Sources */,
 				EB330D7726477C8F005A8FF8 /* ContentView.swift in Sources */,
 				EB330D982647B469005A8FF8 /* ChatView.swift in Sources */,
+				EBC2FF8C2649CF4D005D73CF /* Constants.swift in Sources */,
+				EBC2FF882649CA08005D73CF /* User.swift in Sources */,
 				EB330D8726478633005A8FF8 /* FeedView.swift in Sources */,
 				EB330DBF2648E442005A8FF8 /* DataView.swift in Sources */,
 				EB330DB42648923C005A8FF8 /* LoginView.swift in Sources */,
@@ -346,6 +361,7 @@
 				EB330D922647AA9B005A8FF8 /* ConversationView.swift in Sources */,
 				EB330DA926486D29005A8FF8 /* ProfileFilterButtons.swift in Sources */,
 				EB330DBA26489F97005A8FF8 /* SecureTextField.swift in Sources */,
+				EBC2FF86264907E0005D73CF /* AuthViewModel.swift in Sources */,
 				EB330D9E2647BF49005A8FF8 /* MessageView.swift in Sources */,
 				EB330D942647AAB1005A8FF8 /* ConversationCell.swift in Sources */,
 				EB330DAD26488992005A8FF8 /* NewPostView.swift in Sources */,
