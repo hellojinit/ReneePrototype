@@ -33,7 +33,7 @@ struct ContentView: View {
                         Text("Profile")
                     }
 
-                Text("Data")
+                DataView()
                     .tabItem {
                         Image(systemName: "doc.text")
                         Text("Data")

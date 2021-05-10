@@ -13,6 +13,7 @@ struct RegistrationView: View {
     @State var fullname: String = ""
     @State var username: String = ""
     @State var dob: String = ""
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
         ZStack {
@@ -62,7 +63,7 @@ struct RegistrationView: View {
                         .padding(.bottom)
                 }
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Button(action: {}, label: {
                     Text("Sign Up")
                         .font(.headline)
                         .foregroundColor(Color.green)
@@ -77,15 +78,17 @@ struct RegistrationView: View {
                     .padding()
                 
                 Spacer()
+                Button(action: {mode.wrappedValue.dismiss()}, label: {
+                    HStack{
+                        Text("Already have an account?")
+                            .font(.system(size: 16))
+                        Text("Sign In!")
+                            .font(.system(size: 16, weight: .semibold))
+                    }
+                    .foregroundColor(.white)
+                    .padding(.bottom, UIScreen.main.bounds.height*0.05)
+                })
                 
-                HStack{
-                    Text("Already have an account?")
-                        .font(.system(size: 16))
-                    Text("Sign In!")
-                        .font(.system(size: 16, weight: .semibold))
-                }
-                .foregroundColor(.white)
-                .padding(.bottom, UIScreen.main.bounds.height*0.05)
             }
         }
         .background(

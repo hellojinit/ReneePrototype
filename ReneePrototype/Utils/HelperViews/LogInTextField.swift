@@ -28,7 +28,7 @@ struct LogInTextField: View {
                     .foregroundColor(.white)
                 TextField("", text: $text)
                 Spacer()
-                Image(systemName: "questionmark.circle")
+                Image(systemName: "info.circle")
                     .resizable()
                     .scaledToFit()
                     .frame(width: UIScreen.main.bounds.width*0.06, height:  UIScreen.main.bounds.height*0.025)

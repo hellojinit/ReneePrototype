@@ -12,6 +12,7 @@ struct ReneePrototypeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            //LoginView()
         }
     }
 }

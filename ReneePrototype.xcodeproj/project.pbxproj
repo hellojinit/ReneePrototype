@@ -34,6 +34,8 @@
 		EB330DB626489244005A8FF8 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DB526489244005A8FF8 /* RegistrationView.swift */; };
 		EB330DB8264899C4005A8FF8 /* LogInTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DB7264899C4005A8FF8 /* LogInTextField.swift */; };
 		EB330DBA26489F97005A8FF8 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DB926489F97005A8FF8 /* SecureTextField.swift */; };
+		EB330DBC2648C38A005A8FF8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DBB2648C38A005A8FF8 /* ImagePicker.swift */; };
+		EB330DBF2648E442005A8FF8 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330DBE2648E442005A8FF8 /* DataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		EB330DB526489244005A8FF8 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		EB330DB7264899C4005A8FF8 /* LogInTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInTextField.swift; sourceTree = "<group>"; };
 		EB330DB926489F97005A8FF8 /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
+		EB330DBB2648C38A005A8FF8 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		EB330DBE2648E442005A8FF8 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 		EB330D8426478589005A8FF8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EB330DBD2648E418005A8FF8 /* Data */,
 				EB330DB226489234005A8FF8 /* Authentication */,
 				EB330DA526486C96005A8FF8 /* Search */,
 				EB330DA426486C7D005A8FF8 /* HomeFeed */,
@@ -205,6 +210,7 @@
 				EB330DB026488E66005A8FF8 /* TextArea.swift */,
 				EB330DB7264899C4005A8FF8 /* LogInTextField.swift */,
 				EB330DB926489F97005A8FF8 /* SecureTextField.swift */,
+				EB330DBB2648C38A005A8FF8 /* ImagePicker.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -216,6 +222,14 @@
 				EB330DB526489244005A8FF8 /* RegistrationView.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		EB330DBD2648E418005A8FF8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EB330DBE2648E442005A8FF8 /* DataView.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,10 +310,12 @@
 				EB330D7726477C8F005A8FF8 /* ContentView.swift in Sources */,
 				EB330D982647B469005A8FF8 /* ChatView.swift in Sources */,
 				EB330D8726478633005A8FF8 /* FeedView.swift in Sources */,
+				EB330DBF2648E442005A8FF8 /* DataView.swift in Sources */,
 				EB330DB42648923C005A8FF8 /* LoginView.swift in Sources */,
 				EB330D7526477C8F005A8FF8 /* ReneePrototypeApp.swift in Sources */,
 				EB330D9A2647B779005A8FF8 /* ChatBubble.swift in Sources */,
 				EB330D892647897A005A8FF8 /* PostCell.swift in Sources */,
+				EB330DBC2648C38A005A8FF8 /* ImagePicker.swift in Sources */,
 				EB330DA026486631005A8FF8 /* NewMessageView.swift in Sources */,
 				EB330DA726486D1D005A8FF8 /* ProfileHeader.swift in Sources */,
 				EB330D9C2647BAF4005A8FF8 /* Message.swift in Sources */,
