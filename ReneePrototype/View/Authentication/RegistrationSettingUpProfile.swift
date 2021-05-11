@@ -8,15 +8,25 @@
 import SwiftUI
 
 struct RegistrationSettingUpProfile: View {
+    @Binding var email: String
+    @Binding var password: String
     @State var fullname: String = ""
     @State var username: String = ""
     @State var pronouns: String = ""
     @State var dob = Date()
-    let betaVersionAccess = 1
-    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    @EnvironmentObject var viewModel: AuthViewModel
+    @State var showImagePicker = false
+    @State var selectedUIImage: UIImage?
+    @State var image: Image?
+    
+    
+    func loadImage(){
+        guard let selectedImage = selectedUIImage else { return }
+        image = Image(uiImage: selectedImage)
+    }
+    
     
     var body: some View {
+        
         ZStack {
             VStack{
                 Text("Renée")
@@ -32,6 +42,29 @@ struct RegistrationSettingUpProfile: View {
                     .padding(.bottom, UIScreen.main.bounds.height*0.03)
                 
                 VStack{
+                    Button(action: { showImagePicker.toggle() }, label: {
+                        ZStack {
+                            if let image = image {
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: UIScreen.main.bounds.width * 0.3, height: UIScreen.main.bounds.width * 0.3)
+                                    .clipShape(Circle())
+                                    .padding()
+                            }
+                            else {
+                                Image(systemName: "person.crop.circle.badge.plus")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.width * 0.25)
+                                    .padding()
+                                    .foregroundColor(.white)
+                            }
+                        }
+                    }).sheet(isPresented: $showImagePicker, onDismiss: loadImage, content: {
+                        ImagePicker(image: $selectedUIImage)
+                    })
+                    
                     LogInTextField(text: $fullname, placeHolder: Text("Name"), imageName: "person")
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.3)))
@@ -50,7 +83,7 @@ struct RegistrationSettingUpProfile: View {
                         .cornerRadius(15)
                         .padding(.horizontal)
                         .padding(.bottom)
-                    DatePicker("\(Image(systemName: "calendar"))   Your Birthday",selection: $dob, displayedComponents: .date)
+                    DatePicker("  Your Birthday",selection: $dob, in: ...Date(), displayedComponents: .date)
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.3)))
                         .cornerRadius(15)
@@ -58,9 +91,11 @@ struct RegistrationSettingUpProfile: View {
                         .padding(.bottom)
                 }.foregroundColor(.white)
                 
-                Button(action: {
-                    viewModel.updateInfo( username: username, fullname: fullname, betaVersionAccess: betaVersionAccess, dob: dob)
-                }, label: {
+                NavigationLink(
+                    destination:
+                        RegistrationDataView(email: $email, password1: $password, fullname: $fullname, username: $username, pronouns: $pronouns, dob: $dob, selectedImage: $selectedUIImage)
+                        .navigationBarBackButtonHidden(true),
+                    label: {
                     Text("Next")
                         .font(.headline)
                         .foregroundColor(Color.green)
@@ -69,6 +104,7 @@ struct RegistrationSettingUpProfile: View {
                         .clipShape(Capsule())
                     
                 })
+                
                 Text("Disclaimer: All the information entered on this page is stored securely and will NEVER be sold or used for advertising purposes. We care about your privacy more than anything. Click on the \"\(Image(systemName: "info.circle"))\" to know more about each field will be used.")
                     .font(.system(size: 14))
                     .foregroundColor(Color(.init(white: 1, alpha: 0.8)))
@@ -86,6 +122,6 @@ struct RegistrationSettingUpProfile: View {
 
 struct RegistrationSettingUpProfile_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrationSettingUpProfile()
+        RegistrationSettingUpProfile(email: .constant(""), password: .constant(""))
     }
 }

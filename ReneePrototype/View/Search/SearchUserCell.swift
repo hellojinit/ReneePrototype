@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct SearchUserCell: View {
     let user: User
     
     var body: some View {
         HStack (spacing: 12){
-            Image("meAndKhushi")
+            KFImage(URL(string: user.profileImageURL))
                 .resizable()
                 .scaledToFit()
                 .clipped()

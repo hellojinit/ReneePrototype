@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct RegistrationDataView: View {
-    @State var email: String = ""
-    @State var password1: String = ""
-    @State var fullname: String = ""
-    @State var username: String = ""
-    @State var dob = Date()
+    @Binding var email: String
+    @Binding var password1: String
+    @Binding var fullname: String
+    @Binding var username: String
+    @Binding var pronouns: String
+    @Binding var dob: Date
+    @Binding var selectedImage: UIImage?
     let betaVersionAccess = 1
-    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
@@ -54,8 +55,7 @@ struct RegistrationDataView: View {
                 }.foregroundColor(.white)
                 
                 Button(action: {
-                    viewModel.updateInfo( username: username, fullname: fullname, betaVersionAccess: betaVersionAccess, dob: dob)
-                    viewModel.login(withEmail: email, password: password1)
+                    viewModel.register(email: email, password: password1, username: username, fullname: fullname, betaVersionAccess: betaVersionAccess, pronouns: pronouns, dob: dob, profileImage: selectedImage ?? UIImage(imageLiteralResourceName: "meAndKhushi"))
                 }, label: {
                     Text("Set up!")
                         .font(.headline)
@@ -71,7 +71,7 @@ struct RegistrationDataView: View {
                     .padding()
                 
                 Spacer()
-                Button(action: {mode.wrappedValue.dismiss()}, label: {
+                Button(action: {}, label: {
                     HStack{
                         Text("Set up with Recommended settings")
                             .font(.system(size: 16, weight: .semibold))
@@ -92,6 +92,6 @@ struct RegistrationDataView: View {
 
 struct RegistrationDataView_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrationDataView()
+        RegistrationDataView(email: .constant(""), password1: .constant(""), fullname: .constant(""), username: .constant(""), pronouns: .constant(""), dob: .constant(Date()), selectedImage: .constant(UIImage(imageLiteralResourceName: "meAndKhushi")))
     }
 }

@@ -12,7 +12,6 @@ struct RegistrationView: View {
     @State var password1: String = ""
     @State var password2: String = ""
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         ZStack {
@@ -53,16 +52,16 @@ struct RegistrationView: View {
                     }
                 }.foregroundColor(.white)
                 
-                Button(action: {
-                    viewModel.register(email: email, password: password2)
-                }, label: {
-                    Text("Sign Up")
-                        .font(.headline)
-                        .foregroundColor(Color.green)
-                        .frame(width: UIScreen.main.bounds.width*0.9, height:  UIScreen.main.bounds.height*0.05)
-                        .background(Color.white)
-                        .clipShape(Capsule())
-                    
+                NavigationLink(
+                    destination: RegistrationSettingUpProfile(email: $email, password: $password1)
+                        .navigationBarBackButtonHidden(true),
+                    label: {
+                            Text("Sign Up")
+                                .font(.headline)
+                                .foregroundColor(Color.green)
+                                .frame(width: UIScreen.main.bounds.width*0.9, height:  UIScreen.main.bounds.height*0.05)
+                                .background(Color.white)
+                                .clipShape(Capsule())
                 })
                 
                 Spacer()
@@ -76,7 +75,6 @@ struct RegistrationView: View {
                     .foregroundColor(.white)
                     .padding(.bottom, UIScreen.main.bounds.height*0.05)
                 })
-                
             }
         }
         .background(

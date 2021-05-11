@@ -55,7 +55,7 @@ struct ProfileHeader: View {
             }
             .padding()
             
-            ProfileFollowButtons(isCurrentUser: false)
+            ProfileFollowButtons(isCurrentUser: user.isCurrentUser)
                 .padding(.top, 20)
             Spacer()
         }.frame(width: UIScreen.main.bounds.width)
