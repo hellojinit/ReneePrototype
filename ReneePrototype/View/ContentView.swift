@@ -11,10 +11,10 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
-        Group{
+        Group {
             if viewModel.userSession != nil {
-                NavigationView{
-                    TabView{
+                NavigationView {
+                    TabView {
                         ConversationView()
                             .tabItem {
                                 Image(systemName: "message")
@@ -31,11 +31,11 @@ struct ContentView: View {
                                 Text("Search")
                             }
 
-                        UserProfileView()
-                            .tabItem {
-                                Image(systemName: "person")
-                                Text("Profile")
-                            }
+                     //   UserProfileView()
+                       //     .tabItem {
+                         //       Image(systemName: "person")
+                           //     Text("Profile")
+                            //}
 
                         DataView()
                             .tabItem {
@@ -51,7 +51,6 @@ struct ContentView: View {
                 LoginView()
             }
         }
-        
         
     }
 }

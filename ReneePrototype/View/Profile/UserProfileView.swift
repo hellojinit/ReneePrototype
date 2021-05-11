@@ -8,20 +8,15 @@
 import SwiftUI
 
 struct UserProfileView: View {
+    let user: User
     @State var selectedOption: ProfileFilterOptions = .posts
     var body: some View {
         ScrollView{
             VStack{
-                ProfileHeader()
+                ProfileHeader(user: user)
                     .padding()
                 ProfileFilterButtons(selectedFilter: $selectedOption)
             }
         }
-    }
-}
-
-struct UserProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserProfileView()
     }
 }

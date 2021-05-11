@@ -13,7 +13,7 @@ class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var isAuthentication = false
     @Published var error: Error?
- //   @Published var user: User?
+ //  @Published var user: User?
   //  @State private var wrongLoginAlert = false
     
     init(){
@@ -34,7 +34,7 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func register(email: String, password: String, username: String, fullname: String, betaVersionAccess: Int){
+    func register(email: String, password: String){
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error {
                 print(error.localizedDescription)
@@ -42,13 +42,22 @@ class AuthViewModel: ObservableObject {
             }
             
             guard let user = result?.user else { return }
-            let data = ["email": email, "username": username.lowercased(), "fullname": fullname, "betaVersionAccess": betaVersionAccess, "uid": user.uid] as [String : Any]
+            let data = ["email": email, "username": "", "fullname": "", "betaVersionAccess": 1, "uid": user.uid] as [String : Any]
             
             Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
-                self.userSession = result?.user
-                
+                self.userSession = user
             }
         }
+        
+    }
+    
+    func updateInfo(username: String, fullname: String, betaVersionAccess: Int, dob: Date){
+            guard let user = userSession else { return }
+        let data = ["username": username.lowercased(), "fullname": fullname, "betaVersionAccess": betaVersionAccess, "uid": user.uid, "dob": dob] as [String : Any]
+            
+            Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
+                self.userSession = user
+            }
     }
     
     func signOut(){
@@ -58,11 +67,10 @@ class AuthViewModel: ObservableObject {
     
     func fetchUser(){
         guard let uid = userSession?.uid else { return }
-        Firestore.firestore().collection("users").document(uid).getDocument(){ snapshot, _ in
+        Firestore.firestore().collection("users").document(uid).getDocument { snapshot, _ in
             guard let data = snapshot?.data() else { return}
             let user = User(dictionary: data)
-            
-            
+            print("\(user.username)")
         }
     }
 }

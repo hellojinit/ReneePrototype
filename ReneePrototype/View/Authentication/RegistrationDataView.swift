@@ -1,16 +1,19 @@
 //
-//  RegistrationView.swift
+//  RegistrationDataView.swift
 //  ReneePrototype
 //
-//  Created by jinit shah on 5/9/21.
+//  Created by jinit shah on 5/10/21.
 //
 
 import SwiftUI
 
-struct RegistrationView: View {
+struct RegistrationDataView: View {
     @State var email: String = ""
     @State var password1: String = ""
-    @State var password2: String = ""
+    @State var fullname: String = ""
+    @State var username: String = ""
+    @State var dob = Date()
+    let betaVersionAccess = 1
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @EnvironmentObject var viewModel: AuthViewModel
     
@@ -30,33 +33,31 @@ struct RegistrationView: View {
                     .padding(.bottom, UIScreen.main.bounds.height*0.03)
                 
                 VStack{
-                    LogInTextField(text: $email, placeHolder: Text("Email"), imageName: "envelope")
+                    LogInTextField(text: $fullname, placeHolder: Text("Name"), imageName: "person")
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.3)))
                         .cornerRadius(15)
                         .padding(.horizontal)
                         .padding(.bottom)
-                    SecureTextField(text: $password1, placeHolder: Text("Password"))
+                    LogInTextField(text: $username, placeHolder: Text("Username"), imageName: "person")
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.3)))
                         .cornerRadius(15)
                         .padding(.horizontal)
                         .padding(.bottom)
-                    SecureTextField(text: $password2, placeHolder: Text("Confirm Password"))
+                    DatePicker("Your Birthday",selection: $dob, displayedComponents: .date)
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.3)))
                         .cornerRadius(15)
                         .padding(.horizontal)
                         .padding(.bottom)
-                    if password1 != password2 {
-                        Text("Passwords don't match. Pls try again.")
-                    }
                 }.foregroundColor(.white)
                 
                 Button(action: {
-                    viewModel.register(email: email, password: password2)
+                    viewModel.updateInfo( username: username, fullname: fullname, betaVersionAccess: betaVersionAccess, dob: dob)
+                    viewModel.login(withEmail: email, password: password1)
                 }, label: {
-                    Text("Sign Up")
+                    Text("Set up!")
                         .font(.headline)
                         .foregroundColor(Color.green)
                         .frame(width: UIScreen.main.bounds.width*0.9, height:  UIScreen.main.bounds.height*0.05)
@@ -64,14 +65,17 @@ struct RegistrationView: View {
                         .clipShape(Capsule())
                     
                 })
+                Text("This information will be reflected in the \"data\" section and can be updated whenever you want.")
+                    .font(.system(size: 14))
+                    .foregroundColor(Color(.init(white: 1, alpha: 0.8)))
+                    .padding()
                 
                 Spacer()
                 Button(action: {mode.wrappedValue.dismiss()}, label: {
                     HStack{
-                        Text("Already have an account?")
-                            .font(.system(size: 16))
-                        Text("Sign In!")
+                        Text("Set up with Recommended settings")
                             .font(.system(size: 16, weight: .semibold))
+                        Image(systemName: "chevron.right")
                     }
                     .foregroundColor(.white)
                     .padding(.bottom, UIScreen.main.bounds.height*0.05)
@@ -86,8 +90,8 @@ struct RegistrationView: View {
     }
 }
 
-struct RegistrationView_Previews: PreviewProvider {
+struct RegistrationDataView_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrationView()
+        RegistrationDataView()
     }
 }

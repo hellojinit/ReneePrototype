@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileHeader: View {
+    let user: User
     var body: some View {
         VStack{
             Image("vtlogo")
@@ -17,10 +18,10 @@ struct ProfileHeader: View {
                 .frame(width: 120, height: 120)
                 .clipShape(Circle())
                 .shadow(color: .black, radius: 10)
-            Text("Some Name")
+            Text(user.fullname)
                 .padding(.top, 8)
                 .font(.system(size: 16, weight: .semibold))
-            Text("@username")
+            Text("@\(user.username)")
                 .font(.subheadline)
                 .foregroundColor(.gray)
             Text("This is my bio. Kindness is a lfiestyle, not an act")
@@ -58,11 +59,5 @@ struct ProfileHeader: View {
                 .padding(.top, 20)
             Spacer()
         }.frame(width: UIScreen.main.bounds.width)
-    }
-}
-
-struct ProfileHeader_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileHeader()
     }
 }

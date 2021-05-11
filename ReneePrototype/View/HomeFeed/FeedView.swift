@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FeedView: View {
     @State var isShowingNewPostView: Bool = false
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             ScrollView{
@@ -19,7 +21,11 @@ struct FeedView: View {
                 }.padding()
             }
             
-            Button(action: {isShowingNewPostView.toggle()}, label: {
+            Button(action: {
+                viewModel.signOut()
+                    //isShowingNewPostView.toggle()
+                
+            }, label: {
                 Image(systemName: "plus")
                     .resizable()
                     .frame(width: 32, height: 32)

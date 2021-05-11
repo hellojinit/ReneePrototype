@@ -1,16 +1,18 @@
 //
-//  RegistrationView.swift
+//  RegistrationSettingUpProfile.swift
 //  ReneePrototype
 //
-//  Created by jinit shah on 5/9/21.
+//  Created by jinit shah on 5/10/21.
 //
 
 import SwiftUI
 
-struct RegistrationView: View {
-    @State var email: String = ""
-    @State var password1: String = ""
-    @State var password2: String = ""
+struct RegistrationSettingUpProfile: View {
+    @State var fullname: String = ""
+    @State var username: String = ""
+    @State var pronouns: String = ""
+    @State var dob = Date()
+    let betaVersionAccess = 1
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @EnvironmentObject var viewModel: AuthViewModel
     
@@ -30,33 +32,36 @@ struct RegistrationView: View {
                     .padding(.bottom, UIScreen.main.bounds.height*0.03)
                 
                 VStack{
-                    LogInTextField(text: $email, placeHolder: Text("Email"), imageName: "envelope")
+                    LogInTextField(text: $fullname, placeHolder: Text("Name"), imageName: "person")
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.3)))
                         .cornerRadius(15)
                         .padding(.horizontal)
                         .padding(.bottom)
-                    SecureTextField(text: $password1, placeHolder: Text("Password"))
+                    LogInTextField(text: $username, placeHolder: Text("Username"), imageName: "person")
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.3)))
                         .cornerRadius(15)
                         .padding(.horizontal)
                         .padding(.bottom)
-                    SecureTextField(text: $password2, placeHolder: Text("Confirm Password"))
+                    LogInTextField(text: $pronouns, placeHolder: Text("Pronouns"), imageName: "person")
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.3)))
                         .cornerRadius(15)
                         .padding(.horizontal)
                         .padding(.bottom)
-                    if password1 != password2 {
-                        Text("Passwords don't match. Pls try again.")
-                    }
+                    DatePicker("\(Image(systemName: "calendar"))   Your Birthday",selection: $dob, displayedComponents: .date)
+                        .padding()
+                        .background(Color(.init(white: 1, alpha: 0.3)))
+                        .cornerRadius(15)
+                        .padding(.horizontal)
+                        .padding(.bottom)
                 }.foregroundColor(.white)
                 
                 Button(action: {
-                    viewModel.register(email: email, password: password2)
+                    viewModel.updateInfo( username: username, fullname: fullname, betaVersionAccess: betaVersionAccess, dob: dob)
                 }, label: {
-                    Text("Sign Up")
+                    Text("Next")
                         .font(.headline)
                         .foregroundColor(Color.green)
                         .frame(width: UIScreen.main.bounds.width*0.9, height:  UIScreen.main.bounds.height*0.05)
@@ -64,19 +69,12 @@ struct RegistrationView: View {
                         .clipShape(Capsule())
                     
                 })
+                Text("Disclaimer: All the information entered on this page is stored securely and will NEVER be sold or used for advertising purposes. We care about your privacy more than anything. Click on the \"\(Image(systemName: "info.circle"))\" to know more about each field will be used.")
+                    .font(.system(size: 14))
+                    .foregroundColor(Color(.init(white: 1, alpha: 0.8)))
+                    .padding()
                 
                 Spacer()
-                Button(action: {mode.wrappedValue.dismiss()}, label: {
-                    HStack{
-                        Text("Already have an account?")
-                            .font(.system(size: 16))
-                        Text("Sign In!")
-                            .font(.system(size: 16, weight: .semibold))
-                    }
-                    .foregroundColor(.white)
-                    .padding(.bottom, UIScreen.main.bounds.height*0.05)
-                })
-                
             }
         }
         .background(
@@ -86,8 +84,8 @@ struct RegistrationView: View {
     }
 }
 
-struct RegistrationView_Previews: PreviewProvider {
+struct RegistrationSettingUpProfile_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrationView()
+        RegistrationSettingUpProfile()
     }
 }

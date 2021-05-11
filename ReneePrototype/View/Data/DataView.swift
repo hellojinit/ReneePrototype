@@ -72,9 +72,6 @@ struct DataView: View {
                         .foregroundColor(.blue)
                     Link("Delete all my data", destination: URL(string: "www.youtube.com")!)
                     Text("Log out")
-                        .onTapGesture(perform: {
-                            viewModel.signOut()
-                        })
                     Link("Deactivate my account", destination: URL(string: "www.youtube.com")!)
                 }.foregroundColor(.red)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)

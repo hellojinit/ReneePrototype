@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 class SearchViewModel: ObservableObject {
     @Published var users = [User]()
@@ -13,6 +14,7 @@ class SearchViewModel: ObservableObject {
     init(){
         fetchUsers()
     }
+    
     func fetchUsers(){
         COLLECTION_USERS.getDocuments { snapshot, _ in
             guard let documents = snapshot?.documents else { return }

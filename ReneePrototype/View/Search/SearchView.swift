@@ -17,11 +17,11 @@ struct SearchView: View {
             SearchBar(text: $searchText)
                 .padding()
             
-            VStack (alignment: .leading) {
+            VStack(alignment: .leading) {
                 ForEach(viewModel.users) { user in
                     HStack { Spacer()}
                     NavigationLink(
-                        destination: UserProfileView(),
+                        destination: UserProfileView(user: user),
                         label: {
                             SearchUserCell(user: user)
                         })
