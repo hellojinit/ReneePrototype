@@ -79,6 +79,11 @@ struct DataView: View {
                         Spacer()
                         Image(systemName: "chevron.right")
                     }
+                    HStack{
+                        Text("Learn how we user your data")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                    }
                     
                     Link("Terms of Service", destination: URL(string: "www.renee.app")!)
                 }

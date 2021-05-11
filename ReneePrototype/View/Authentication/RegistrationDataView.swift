@@ -21,6 +21,7 @@ struct RegistrationDataView: View {
     var body: some View {
         ZStack {
             VStack{
+                
                 Text("Renée")
                     .font(.system(.largeTitle, design: .rounded)).bold()
                     .foregroundColor(Color(#colorLiteral(red: 0.09690142423, green: 0.08666530997, blue: 1, alpha: 1)))
@@ -34,12 +35,7 @@ struct RegistrationDataView: View {
                     .padding(.bottom, UIScreen.main.bounds.height*0.03)
                 
                 VStack{
-                    LogInTextField(text: $fullname, placeHolder: Text("Name"), imageName: "person")
-                        .padding()
-                        .background(Color(.init(white: 1, alpha: 0.3)))
-                        .cornerRadius(15)
-                        .padding(.horizontal)
-                        .padding(.bottom)
+                    
                     LogInTextField(text: $username, placeHolder: Text("Username"), imageName: "person")
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.3)))

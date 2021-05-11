@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct PostCell: View {
+    let post: Post
+    
     var body: some View {
         VStack {
             HStack(alignment: .top) {
-                Image("meAndKhushi")
+                KFImage(URL(string: post.profileImageURL))
                     .resizable()
                     .scaledToFill()
                     .clipped()
@@ -19,14 +22,14 @@ struct PostCell: View {
                     .clipShape(Circle())
                     .padding(.leading)
                 
-                Text("Username")
+                Text("\(post.postUsingUsername ? post.username : post.fullname)")
                     .font(.system(size: 20))
                     .padding(.top, 7)
                 Spacer()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Image(systemName: "chevron.down")
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                         .frame(width: 25, height: 25)
                         .padding(.top, 10)
                         .padding(.trailing)
@@ -34,9 +37,10 @@ struct PostCell: View {
                 })
             }.foregroundColor(.black)
             
-            Image("building")
+            KFImage(URL(string: post.imageURL))
                 .resizable()
-                .scaledToFill()
+                .clipped()
+                .scaledToFit()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
             
             HStack{
@@ -48,7 +52,7 @@ struct PostCell: View {
                         .frame(width: 22, height: 22)
                         .padding(5)
                 })
-                Text("25")
+                Text("\(post.likes.count)")
                     .font(.system(size: 22))
                     .fontWeight(.light)
                 
@@ -61,7 +65,7 @@ struct PostCell: View {
                         .frame(width: 22, height: 22)
                         .padding(5)
                 })
-                Text("5")
+                Text("\(post.comments.count)")
                     .font(.system(size: 22))
                     .fontWeight(.light)
                 
@@ -91,17 +95,11 @@ struct PostCell: View {
             .padding(.bottom, 5)
             
             HStack {
-                Text("This is some random caption blah blah.dsf sdfsd fasdfnsdnfls dfnla ksdnflsad nflsadn")
+                Text(post.caption)
                     .frame(width: UIScreen.main.bounds.width - 10, alignment: .topLeading)
                     .padding(.bottom, 20)
             }
         }
         .padding(.zero)
-    }
-}
-
-struct PostCell_Previews: PreviewProvider {
-    static var previews: some View {
-        PostCell()
     }
 }

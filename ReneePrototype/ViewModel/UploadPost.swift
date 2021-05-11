@@ -9,6 +9,12 @@ import SwiftUI
 import Firebase
 
 class UploadPosts: ObservableObject {
+    @Binding var isPresented: Bool
+    
+    init(isPresented: Binding<Bool>){
+        self._isPresented = isPresented
+    }
+    
     func uploadPost(caption: String, postVisibility: Int, postUsingUsername: Bool, imageSelected: UIImage){
         guard let imageData = imageSelected.jpegData(compressionQuality: 0.3) else { return }
         let filename = NSUUID().uuidString
@@ -21,11 +27,12 @@ class UploadPosts: ObservableObject {
             storageRef.downloadURL { url, _ in
                 guard let imageURL = url?.absoluteString else { return }
                 guard let user = AuthViewModel.shared.user else { return }
+                let id = NSUUID().uuidString
                 
-                let data: [String: Any] = ["uid": user.id, "username": user.username, "caption": caption, "timestamp": Date(), "postUsingUsername": postUsingUsername, "postVisibililty": postVisibility, "imageURL": imageURL, "likes": [String](), "Comments": [String](), "postStorageID": filename]
+                let data: [String: Any] = ["id": id, "uid": user.id, "username": user.username, "profileImageURL": user.profileImageURL, "fullname": user.fullname ,"caption": caption, "timestamp": Timestamp(date: Date()), "postUsingUsername": postUsingUsername, "postVisibililty": postVisibility, "imageURL": imageURL, "likes": [String](), "Comments": [String](), "postStorageID": filename]
                 
-                Firestore.firestore().collection("posts").document().setData(data) { _ in
-                    
+                Firestore.firestore().collection("posts").document(id).setData(data) { _ in
+                    self.isPresented = false
                 }
             }
         }

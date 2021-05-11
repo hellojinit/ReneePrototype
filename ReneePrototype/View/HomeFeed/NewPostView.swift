@@ -13,10 +13,15 @@ struct NewPostView: View {
     @State var showImagePicker = false
     @State var selectedUIImage: UIImage?
     @State var image: Image?
-    @ObservedObject var viewModel = UploadPosts()
     @State var postVisibility: Int = 1
     //0 for close friends, 1 for followers and 2 for public
     @State var postUsingUsername: Bool = true
+    @ObservedObject var viewModel: UploadPosts
+    
+    init(isPresented: Binding<Bool>){
+        self._isShowingNewPostView = isPresented
+        self.viewModel = UploadPosts(isPresented: isPresented)
+    }
     
     func loadImage(){
         guard let selectedImage = selectedUIImage else { return }
@@ -51,9 +56,9 @@ struct NewPostView: View {
                             if let image = image {
                                 image
                                     .resizable()
-                                    .scaledToFill()
+                                    .scaledToFit()
                                     .clipped()
-                                    .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.width*0.9)
+                                    .frame(width: UIScreen.main.bounds.width*0.8, height: UIScreen.main.bounds.width*0.8)
                                     .padding()
                             }
                             else {
@@ -61,7 +66,7 @@ struct NewPostView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .clipped()
-                                    .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.width*0.9)
+                                    .frame(width: UIScreen.main.bounds.width*0.8, height: UIScreen.main.bounds.width*0.8)
                                     .foregroundColor(.blue)
                                     .padding()
                             }
@@ -91,6 +96,6 @@ struct NewPostView: View {
 
 struct NewPostView_Previews: PreviewProvider {
     static var previews: some View {
-        NewPostView(isShowingNewPostView: .constant(false), captionText: "")
+        NewPostView(isPresented: .constant(true))
     }
 }

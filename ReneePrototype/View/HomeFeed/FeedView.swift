@@ -9,14 +9,14 @@ import SwiftUI
 
 struct FeedView: View {
     @State var isShowingNewPostView: Bool = false
-    @EnvironmentObject var viewModel: AuthViewModel
+    @ObservedObject var viewModel = FeedViewModel()
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             ScrollView{
                 VStack{
-                    ForEach(0..<10){ _ in
-                        PostCell()
+                    ForEach(viewModel.posts){ post in
+                        PostCell(post: post)
                     }
                 }.padding()
             }
@@ -35,7 +35,7 @@ struct FeedView: View {
             .clipShape(Circle())
             .padding()
             .fullScreenCover(isPresented: $isShowingNewPostView) {
-                NewPostView(isShowingNewPostView: $isShowingNewPostView, captionText: "")
+                NewPostView(isPresented: $isShowingNewPostView)
             }
             
         }
