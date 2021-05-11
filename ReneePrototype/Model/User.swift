@@ -16,7 +16,7 @@ struct User: Identifiable {
     let profileImageURL: String
     let pronouns: String
     let dob: Date
-    let betaVersionAccess: Int
+    let betaVersionAccess: Bool
     var isCurrentUser: Bool { return Auth.auth().currentUser?.uid == self.id}
     
     init(dictionary: [String: Any]) {
@@ -27,6 +27,6 @@ struct User: Identifiable {
         self.profileImageURL = dictionary["profileImageURL"] as? String ?? ""
         self.pronouns = dictionary["pronouns"] as? String ?? ""
         self.dob = dictionary["dob"] as? Date ?? Date()
-        self.betaVersionAccess = dictionary["betaVersionAccess"] as? Int ?? 1
+        self.betaVersionAccess = dictionary["betaVersionAccess"] as? Bool ?? true
     }
 }

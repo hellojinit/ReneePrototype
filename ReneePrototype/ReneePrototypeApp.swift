@@ -10,14 +10,13 @@ import Firebase
 
 @main
 struct ReneePrototypeApp: App {
-    
     init() {
         FirebaseApp.configure()
     }
    
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(AuthViewModel())
+            ContentView().environmentObject(AuthViewModel.shared)
         }
     }
 }

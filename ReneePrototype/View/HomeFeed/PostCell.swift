@@ -11,7 +11,7 @@ struct PostCell: View {
     var body: some View {
         VStack {
             HStack(alignment: .top) {
-                Image(systemName: "person.circle")
+                Image("meAndKhushi")
                     .resizable()
                     .scaledToFill()
                     .clipped()
@@ -34,7 +34,7 @@ struct PostCell: View {
                 })
             }.foregroundColor(.black)
             
-            Image("vtlogo")
+            Image("building")
                 .resizable()
                 .scaledToFill()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)

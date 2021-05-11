@@ -22,8 +22,7 @@ struct FeedView: View {
             }
             
             Button(action: {
-                viewModel.signOut()
-                    //isShowingNewPostView.toggle()
+                isShowingNewPostView.toggle()
                 
             }, label: {
                 Image(systemName: "plus")

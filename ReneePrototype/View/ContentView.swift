@@ -30,13 +30,13 @@ struct ContentView: View {
                                 Image(systemName: "magnifyingglass")
                                 Text("Search")
                             }
-
-                     //   UserProfileView()
-                       //     .tabItem {
-                         //       Image(systemName: "person")
-                           //     Text("Profile")
-                            //}
-
+/*
+                        UserProfileView()
+                            .tabItem {
+                                Image(systemName: "person")
+                                Text("Profile")
+                           }
+*/
                         DataView()
                             .tabItem {
                                 Image(systemName: "doc.text")
@@ -44,6 +44,13 @@ struct ContentView: View {
                             }
                     }
                     .navigationBarTitle("Renee")
+                    .navigationBarItems(leading: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        Image(systemName: "gear")
+                            .foregroundColor(.black)
+                    }), trailing: Button(action: {}, label: {
+                        Image(systemName: "camera")
+                            .foregroundColor(.black)
+                    }))
                     .navigationBarTitleDisplayMode(.inline)
                 }
             }

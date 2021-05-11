@@ -15,7 +15,7 @@ struct RegistrationDataView: View {
     @Binding var pronouns: String
     @Binding var dob: Date
     @Binding var selectedImage: UIImage?
-    let betaVersionAccess = 1
+    let betaVersionAccess = true
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {

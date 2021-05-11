@@ -6,22 +6,24 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileHeader: View {
-    let user: User
+    let viewModel: ProfileViewModel
+    @Binding var isFollowed: Bool
     var body: some View {
         VStack{
-            Image("vtlogo")
+            KFImage(URL(string: viewModel.user.profileImageURL))
                 .resizable()
                 .scaledToFill()
                 .clipped()
                 .frame(width: 120, height: 120)
                 .clipShape(Circle())
                 .shadow(color: .black, radius: 10)
-            Text(user.fullname)
+            Text(viewModel.user.fullname)
                 .padding(.top, 8)
                 .font(.system(size: 16, weight: .semibold))
-            Text("@\(user.username)")
+            Text("@\(viewModel.user.username)")
                 .font(.subheadline)
                 .foregroundColor(.gray)
             Text("This is my bio. Kindness is a lfiestyle, not an act")
@@ -55,7 +57,7 @@ struct ProfileHeader: View {
             }
             .padding()
             
-            ProfileFollowButtons(isCurrentUser: user.isCurrentUser)
+            ProfileFollowButtons(viewModel: viewModel, isFollowed: $isFollowed)
                 .padding(.top, 20)
             Spacer()
         }.frame(width: UIScreen.main.bounds.width)

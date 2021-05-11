@@ -13,8 +13,9 @@ class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var isAuthentication = false
     @Published var error: Error?
- //  @Published var user: User?
-  //  @State private var wrongLoginAlert = false
+    @Published var user: User?
+    
+    static let shared = AuthViewModel()
     
     init(){
         userSession = Auth.auth().currentUser
@@ -31,10 +32,11 @@ class AuthViewModel: ObservableObject {
                // }
       //      }
             self.userSession = result?.user
+            self.fetchUser()
         }
     }
     
-    func register(email: String, password: String, username: String, fullname: String, betaVersionAccess: Int, pronouns: String, dob: Date, profileImage: UIImage){
+    func register(email: String, password: String, username: String, fullname: String, betaVersionAccess: Bool, pronouns: String, dob: Date, profileImage: UIImage){
         
         guard let imageData = profileImage.jpegData(compressionQuality: 0.3) else { return }
         let filename = NSUUID().uuidString
@@ -57,6 +59,7 @@ class AuthViewModel: ObservableObject {
                     let data = ["email": email, "username": username.lowercased(), "fullname": fullname, "betaVersionAccess": betaVersionAccess, "uid": user.uid, "dob": dob, "pronouns": pronouns, "profileImageURL" : profileImageURL] as [String : Any]
                     Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
                         self.userSession = user
+                        self.fetchUser()
                     }
                 }
             }
@@ -72,8 +75,7 @@ class AuthViewModel: ObservableObject {
         guard let uid = userSession?.uid else { return }
         Firestore.firestore().collection("users").document(uid).getDocument { snapshot, _ in
             guard let data = snapshot?.data() else { return}
-            let user = User(dictionary: data)
-            print("\(user.username)")
+            self.user = User(dictionary: data)
         }
     }
 }
