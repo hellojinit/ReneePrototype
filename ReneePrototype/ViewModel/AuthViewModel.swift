@@ -40,7 +40,7 @@ class AuthViewModel: ObservableObject {
         
         guard let imageData = profileImage.jpegData(compressionQuality: 0.3) else { return }
         let filename = NSUUID().uuidString
-        let storageRef = Storage.storage().reference().child(filename)
+        let storageRef = Storage.storage().reference().child("profilePics").child(filename)
         
         
         storageRef.putData(imageData, metadata: nil) { _, error in
@@ -68,6 +68,7 @@ class AuthViewModel: ObservableObject {
     
     func signOut(){
         userSession = nil
+        user = nil
         try? Auth.auth().signOut()
     }
     

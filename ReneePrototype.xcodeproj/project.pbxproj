@@ -12,6 +12,7 @@
 		EB202C14264A098400858840 /* RegistrationDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB202C13264A098400858840 /* RegistrationDataView.swift */; };
 		EB202C17264A330800858840 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EB202C16264A330800858840 /* Kingfisher */; };
 		EB202C19264A37CF00858840 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB202C18264A37CF00858840 /* ProfileViewModel.swift */; };
+		EB202C1B264A4CB800858840 /* UploadPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB202C1A264A4CB800858840 /* UploadPost.swift */; };
 		EB330D7526477C8F005A8FF8 /* ReneePrototypeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D7426477C8F005A8FF8 /* ReneePrototypeApp.swift */; };
 		EB330D7726477C8F005A8FF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB330D7626477C8F005A8FF8 /* ContentView.swift */; };
 		EB330D7926477C91005A8FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB330D7826477C91005A8FF8 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		EB202C11264A06AD00858840 /* RegistrationSettingUpProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationSettingUpProfile.swift; sourceTree = "<group>"; };
 		EB202C13264A098400858840 /* RegistrationDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataView.swift; sourceTree = "<group>"; };
 		EB202C18264A37CF00858840 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		EB202C1A264A4CB800858840 /* UploadPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPost.swift; sourceTree = "<group>"; };
 		EB330D7126477C8F005A8FF8 /* ReneePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReneePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB330D7426477C8F005A8FF8 /* ReneePrototypeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReneePrototypeApp.swift; sourceTree = "<group>"; };
 		EB330D7626477C8F005A8FF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -178,6 +180,7 @@
 				EBC2FF85264907E0005D73CF /* AuthViewModel.swift */,
 				EB202C0F2649E6BF00858840 /* SearchViewModel.swift */,
 				EB202C18264A37CF00858840 /* ProfileViewModel.swift */,
+				EB202C1A264A4CB800858840 /* UploadPost.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB202C1B264A4CB800858840 /* UploadPost.swift in Sources */,
 				EB330DAB26486D42005A8FF8 /* ProfileFollowButtons.swift in Sources */,
 				EB330DB126488E66005A8FF8 /* TextArea.swift in Sources */,
 				EB330DB626489244005A8FF8 /* RegistrationView.swift in Sources */,

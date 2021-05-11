@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DataView: View {
-    @State private var revenueSelection = 1
+    @State private var revenueSelection = 0
     @State private var useMyDataOption: Bool = true
     @State private var useAlgorithmOption: Bool = true
     @EnvironmentObject var viewModel: AuthViewModel
@@ -32,24 +32,39 @@ struct DataView: View {
                         Text("Your feed will be organized chronologically!")
                             .foregroundColor(.gray)
                     }
+                    
                     HStack{
                         Text("Your profit share ")
                         Spacer()
                         Text("$ \(profitShare, specifier: "%.2f")")
                     }
-                    Picker(selection: $revenueSelection, label: Text("Cash-out settings")){
-                        Text("Charity").tag(1)
-                        Text("Invest").tag(2)
-                        Text("Bank Transfer").tag(3)
-                        Text("Bitcoin").tag(4)
+                    
+                    HStack{
+                        Picker(selection: $revenueSelection, label: Text("Cash-out settings")){
+                            Text("Charity").tag(0)
+                            Text("Invest").tag(1)
+                            Text("Bank Transfer").tag(2)
+                            Text("Bitcoin").tag(3)
+                        }.pickerStyle(MenuPickerStyle())
+                        Spacer()
+                        if revenueSelection == 0 {
+                            Text("Charity")
+                        } else if revenueSelection == 1{
+                            Text("Invest")
+                        } else if revenueSelection == 2{
+                            Text("Bank Transfer")
+                        } else{
+                            Text("Bitcoin")
+                        }
                     }
-                    if revenueSelection == 1 {
+    
+                    if revenueSelection == 0 {
                         Text("Thank You so much for making world a better place!!")
                             .foregroundColor(.gray)
-                    } else if revenueSelection == 2{
+                    } else if revenueSelection == 1{
                         Text("Investing information is unavailable in beta version.")
                             .foregroundColor(.gray)
-                    } else if revenueSelection == 3{
+                    } else if revenueSelection == 2{
                         Text("Information and links to bank transfer is unavailable in beta version.")
                             .foregroundColor(.gray)
                     } else{
@@ -57,6 +72,7 @@ struct DataView: View {
                             .foregroundColor(.gray)
                     }
                 }
+                
                 Section(header: Text("Your Data")){
                     HStack{
                         Text("View all your data")

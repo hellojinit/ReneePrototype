@@ -28,6 +28,7 @@ struct TextArea: View {
             
             TextEditor(text: $text)
                 .padding(4)
+                .cornerRadius(10)
         }.font(.body)
     }
 }
