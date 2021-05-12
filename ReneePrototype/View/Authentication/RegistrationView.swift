@@ -48,7 +48,12 @@ struct RegistrationView: View {
                         .padding(.horizontal)
                         .padding(.bottom)
                     if password1 != password2 {
-                        Text("Passwords don't match. Pls try again.")
+                        Text("Passwords don't match. Pls enter again.")
+                            .padding()
+                    }
+                    if password1.count < 6{
+                        Text("Password too short. Pls enter again")
+                            .padding()
                     }
                 }.foregroundColor(.white)
                 

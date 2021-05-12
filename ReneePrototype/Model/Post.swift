@@ -19,8 +19,8 @@ struct Post: Identifiable {
     let postUsingUsername: Bool
     let postVisibility: Int
     let imageURL: String
-    let likes: [String]
-    let comments: [String]
+    let likes: Int
+    let comments: Int
     let postStorageID: String
     
     init(dictionary: [String: Any]) {
@@ -33,8 +33,8 @@ struct Post: Identifiable {
         self.postUsingUsername = dictionary["postUsingUsername"] as? Bool ?? true
         self.postVisibility = dictionary["postVisibility"] as? Int ?? 1
         self.imageURL = dictionary["imageURL"] as? String ?? ""
-        self.likes = dictionary["likes"] as? [String] ?? []
-        self.comments = dictionary["comments"] as? [String] ?? []
+        self.likes = dictionary["likes"] as? Int ?? 0
+        self.comments = dictionary["comments"] as? Int ?? 0 
         self.postStorageID = dictionary["postStorageID"] as? String ?? ""
         self.timeStamp = dictionary["timeStamp"] as? Timestamp ?? Timestamp(date: Date())
     }

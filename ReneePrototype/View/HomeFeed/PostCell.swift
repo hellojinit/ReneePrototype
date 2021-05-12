@@ -25,6 +25,7 @@ struct PostCell: View {
                 Text("\(post.postUsingUsername ? post.username : post.fullname)")
                     .font(.system(size: 20))
                     .padding(.top, 7)
+                
                 Spacer()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Image(systemName: "chevron.down")
@@ -43,56 +44,7 @@ struct PostCell: View {
                 .scaledToFit()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
             
-            HStack{
-                Button(action: {}, label: {
-                    Image(systemName: "heart")
-                        .resizable()
-                        .scaledToFill()
-                        .clipped()
-                        .frame(width: 22, height: 22)
-                        .padding(5)
-                })
-                Text("\(post.likes.count)")
-                    .font(.system(size: 22))
-                    .fontWeight(.light)
-                
-                Spacer()
-                Button(action: {}, label: {
-                    Image(systemName: "message")
-                        .resizable()
-                        .scaledToFill()
-                        .clipped()
-                        .frame(width: 22, height: 22)
-                        .padding(5)
-                })
-                Text("\(post.comments.count)")
-                    .font(.system(size: 22))
-                    .fontWeight(.light)
-                
-                Spacer()
-                Button(action: {}, label: {
-                    Image(systemName: "checkmark.shield")
-                        .resizable()
-                        .scaledToFill()
-                        .clipped()
-                        .frame(width: 22, height: 22)
-                        .padding(5)
-                })
-                
-                Spacer()
-                Button(action: {}, label: {
-                    Image(systemName: "paperplane")
-                        .resizable()
-                        .scaledToFill()
-                        .clipped()
-                        .frame(width: 22, height: 22)
-                        .padding(5)
-                })
-            }
-            .padding(.horizontal)
-            .accentColor(.black)
-            .foregroundColor(.gray)
-            .padding(.bottom, 5)
+            PostCellActionView(post: post)
             
             HStack {
                 Text(post.caption)

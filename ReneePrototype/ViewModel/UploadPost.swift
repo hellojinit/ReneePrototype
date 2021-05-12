@@ -29,7 +29,7 @@ class UploadPosts: ObservableObject {
                 guard let user = AuthViewModel.shared.user else { return }
                 let id = NSUUID().uuidString
                 
-                let data: [String: Any] = ["id": id, "uid": user.id, "username": user.username, "profileImageURL": user.profileImageURL, "fullname": user.fullname ,"caption": caption, "timestamp": Timestamp(date: Date()), "postUsingUsername": postUsingUsername, "postVisibililty": postVisibility, "imageURL": imageURL, "likes": [String](), "Comments": [String](), "postStorageID": filename]
+                let data: [String: Any] = ["id": id, "uid": user.id, "username": user.username, "profileImageURL": user.profileImageURL, "fullname": user.fullname ,"caption": caption, "timestamp": Timestamp(date: Date()), "postUsingUsername": postUsingUsername, "postVisibililty": postVisibility, "imageURL": imageURL, "likes": 0, "Comments": 0, "postStorageID": filename]
                 
                 Firestore.firestore().collection("posts").document(id).setData(data) { _ in
                     self.isPresented = false

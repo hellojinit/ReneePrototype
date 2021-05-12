@@ -17,8 +17,8 @@ struct ContentView: View {
                     TabView {
                         ConversationView()
                             .tabItem {
-                                Image(systemName: "message")
-                                Text("Chat")
+                                Image(systemName: "text.bubble")
+                                Text("chat")
                             }
                         FeedView()
                             .tabItem {

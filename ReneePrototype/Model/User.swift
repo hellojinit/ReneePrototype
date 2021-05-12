@@ -17,6 +17,8 @@ struct User: Identifiable {
     let pronouns: String
     let dob: Date
     let betaVersionAccess: Bool
+    var stats: userStats
+    var isFollowed = false
     var isCurrentUser: Bool { return Auth.auth().currentUser?.uid == self.id}
     
     init(dictionary: [String: Any]) {
@@ -28,5 +30,14 @@ struct User: Identifiable {
         self.pronouns = dictionary["pronouns"] as? String ?? ""
         self.dob = dictionary["dob"] as? Date ?? Date()
         self.betaVersionAccess = dictionary["betaVersionAccess"] as? Bool ?? true
+        self.stats = userStats(followers: 0, following: 0, publicPost: 0, followerPost: 0, closeFriendsPost: 0)
     }
+}
+
+struct userStats {
+    let followers: Int
+    let following: Int
+    let publicPost: Int
+    let followerPost: Int
+    let closeFriendsPost: Int
 }

@@ -27,6 +27,7 @@ struct FeedView: View {
             }, label: {
                 Image(systemName: "plus")
                     .resizable()
+                    .scaledToFit()
                     .frame(width: 32, height: 32)
                     .padding()
             })
